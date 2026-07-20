@@ -3,14 +3,14 @@ import './App.css';
 import RestroMenu from './components/RestroMenu';
 
 const GALLERY_IMAGES = [
-  { title: 'Cafe Interior', url: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Signature Dishes', url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Family Moments', url: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Coffee Counter', url: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Live Kitchen', url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Outdoor Seating', url: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Cafe Ambience', url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Food Presentation', url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop' }
+  { title: 'Cafe Interior', url: '/images/gallery/interior_1.jpg' },
+  { title: 'Signature Dishes', url: '/images/gallery/food_1.jpg' },
+  { title: 'Family Moments', url: '/images/gallery/family.jpg' },
+  { title: 'Coffee Counter', url: '/images/gallery/counter.jpg' },
+  { title: 'Live Kitchen', url: '/images/gallery/kitchen.jpg' },
+  { title: 'Outdoor Seating', url: '/images/gallery/outdoor.jpg' },
+  { title: 'Cafe Ambience', url: '/images/gallery/ambience.jpg' },
+  { title: 'Food Presentation', url: '/images/gallery/food_2.jpg' }
 ];
 
 function App() {
