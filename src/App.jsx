@@ -3,9 +3,21 @@ import './App.css';
 import RetroPlayer from './components/RetroPlayer';
 import RestroMenu from './components/RestroMenu';
 
+const GALLERY_IMAGES = [
+  { title: 'Cafe Interior', url: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Signature Dishes', url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Family Moments', url: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Coffee Counter', url: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Live Kitchen', url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Outdoor Seating', url: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Cafe Ambience', url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Food Presentation', url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop' }
+];
+
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [lightboxImg, setLightboxImg] = useState(null);
 
   // Scroll event to add background to Navbar
   useEffect(() => {
@@ -253,60 +265,33 @@ function App() {
             <p className="eyebrow">Gallery</p>
             <h2 className="section-title">Moments worth <em>savouring</em></h2>
             <p className="section-desc">
-              A sneak peek into our seating zones, live kitchens, and community stories. Prepared for memories.
+              A peek into our seating zones, live kitchens, and community stories. Click on any frame to view in full.
             </p>
           </div>
 
-          <div className="gallery-grid">
-            <div className="gallery-card-frame">
-              <div className="gallery-placeholder-screen">
-                <div className="gallery-placeholder-icon">📸</div>
-                <div className="gallery-placeholder-text">[ Image Slot ]</div>
+          <div className="gallery-masonry">
+            {GALLERY_IMAGES.map((img, i) => (
+              <div 
+                key={i} 
+                className="gallery-masonry-item"
+                onClick={() => { playClickSound(); setLightboxImg(img.url); }}
+              >
+                <img src={img.url} alt={img.title} className="gallery-masonry-img" />
+                <div className="gallery-item-caption">
+                  <span>{img.title}</span>
+                </div>
               </div>
-              <div className="gallery-caption">Cafe Interior</div>
-            </div>
-
-            <div className="gallery-card-frame">
-              <div className="gallery-placeholder-screen">
-                <div className="gallery-placeholder-icon">🍽️</div>
-                <div className="gallery-placeholder-text">[ Image Slot ]</div>
-              </div>
-              <div className="gallery-caption">Signature Dishes</div>
-            </div>
-
-            <div className="gallery-card-frame">
-              <div className="gallery-placeholder-screen">
-                <div className="gallery-placeholder-icon">👪</div>
-                <div className="gallery-placeholder-text">[ Image Slot ]</div>
-              </div>
-              <div className="gallery-caption">Family Moments</div>
-            </div>
-
-            <div className="gallery-card-frame">
-              <div className="gallery-placeholder-screen">
-                <div className="gallery-placeholder-icon">☕</div>
-                <div className="gallery-placeholder-text">[ Image Slot ]</div>
-              </div>
-              <div className="gallery-caption">Coffee Corner</div>
-            </div>
-
-            <div className="gallery-card-frame">
-              <div className="gallery-placeholder-screen">
-                <div className="gallery-placeholder-icon">🔥</div>
-                <div className="gallery-placeholder-text">[ Image Slot ]</div>
-              </div>
-              <div className="gallery-caption">Live Kitchen</div>
-            </div>
-
-            <div className="gallery-card-frame">
-              <div className="gallery-placeholder-screen">
-                <div className="gallery-placeholder-icon">🌳</div>
-                <div className="gallery-placeholder-text">[ Image Slot ]</div>
-              </div>
-              <div className="gallery-caption">Outdoor Seating</div>
-            </div>
+            ))}
           </div>
         </div>
+
+        {/* Lightbox Modal */}
+        {lightboxImg && (
+          <div className="lightbox-backdrop" onClick={() => setLightboxImg(null)}>
+            <button className="lightbox-close-btn" onClick={() => setLightboxImg(null)}>×</button>
+            <img src={lightboxImg} alt="Enlarged view" className="lightbox-img" onClick={(e) => e.stopPropagation()} />
+          </div>
+        )}
       </section>
 
       {/* ==========================================

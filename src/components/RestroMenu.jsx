@@ -2,129 +2,90 @@ import React, { useState } from 'react';
 
 const MENU_DATA = {
   starters: [
-    { name: 'Cheese Corn Balls', price: 199 },
-    { name: 'Peri Peri Fries Basket', price: 149 },
-    { name: 'Veg Crispy', price: 189 },
-    { name: 'Paneer 65', price: 209 },
-    { name: 'Crispy Mushroom Pepper Salt', price: 219 },
-    { name: 'Chilli Baby Corn', price: 199 }
+    { name: 'Paneer Tikka Dry', price: 239, img: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=600' },
+    { name: 'Chicken Roast', price: 279, img: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=600' },
+    { name: 'Fish & Chips', price: 295, img: 'https://images.unsplash.com/photo-1579208575657-c595a05323b3?q=80&w=600' },
+    { name: 'Cheese Corn Balls', price: 199, img: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=600' },
+    { name: 'Peri Peri Fries Basket', price: 149, img: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=600' }
   ],
   soups: [
-    { name: 'Tomato Shorba', price: 129 },
-    { name: 'Hot & Sour Soup', price: 139 },
-    { name: 'Sweet Corn Soup', price: 139 },
-    { name: 'Manchow Soup', price: 149 },
-    { name: 'Lemon Coriander Soup', price: 139 }
+    { name: 'Hot & Sour Chicken Soup', price: 149, img: 'https://images.unsplash.com/photo-1547592165-e1d17f8e05cc?q=80&w=600' },
+    { name: 'Manchow Soup', price: 139, img: 'https://images.unsplash.com/photo-1607532941433-304659e8198a?q=80&w=600' }
   ],
   chinese: [
-    { name: 'Chilli Garlic Noodles', price: 229 },
-    { name: 'Veg Fried Rice', price: 199 },
-    { name: 'Dragon Chicken', price: 269 },
-    { name: 'Veg Manchurian Gravy', price: 219 },
-    { name: 'Paneer Chilli Dry', price: 239 },
-    { name: 'Schezwan Fried Rice', price: 209 }
+    { name: 'Chilli Garlic Noodles', price: 229, img: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=600' },
+    { name: 'Paneer Chilli Dry', price: 239, img: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=600' },
+    { name: 'Dragon Chicken', price: 269, img: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=600' }
   ],
   indian: [
-    { name: 'Paneer Lababdar', price: 289 },
-    { name: 'Old Delhi Butter Chicken', price: 399 },
-    { name: 'Dal Makhani', price: 229 },
-    { name: 'Mix Veg Jalfrezi', price: 249 },
-    { name: 'Kadhai Paneer', price: 279 },
-    { name: 'Chicken Bharta', price: 329 }
+    { name: 'Paneer Butter Masala', price: 269, img: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=600' },
+    { name: 'Fish Butter Masala', price: 349, img: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=600' },
+    { name: 'Mutton Kasha', price: 389, img: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600' }
   ],
   tandoor: [
-    { name: 'Smoky Paneer Tikka', price: 279 },
-    { name: 'Malai Soya Chaap', price: 259 },
-    { name: 'Tandoori Chicken (Half)', price: 349 },
-    { name: 'Chicken Tikka', price: 299 },
-    { name: 'Tandoori Roti', price: 29 },
-    { name: 'Butter Naan', price: 69 }
+    { name: 'Malai Soya Chaap', price: 259, img: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=600' },
+    { name: 'Tandoori Naan', price: 59, img: 'https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=600' }
   ],
   biryani: [
-    { name: 'Veg Dum Biryani', price: 269 },
-    { name: 'Chicken Tikka Biryani', price: 349 },
-    { name: 'Mutton Dum Biryani', price: 399 },
-    { name: 'Jeera Rice', price: 149 },
-    { name: 'Peas Pulao', price: 179 }
+    { name: 'Basanti Pulao', price: 189, img: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=600' },
+    { name: 'Mutton Dum Biryani', price: 399, img: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=600' }
   ],
   pizza: [
-    { name: 'Retro Double Cheese Pizza', price: 349 },
-    { name: 'Farmhouse Pizza', price: 329 },
-    { name: 'Paneer Tikka Pizza', price: 349 },
-    { name: 'Margherita Pizza', price: 279 },
-    { name: 'Chicken Golden Delight Pizza', price: 389 }
+    { name: 'Double Cheese Pizza', price: 349, img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600' }
   ],
   burger: [
-    { name: '90s Classic Cheeseburger', price: 189 },
-    { name: 'Veg Crispy Burger', price: 149 },
-    { name: 'Chicken Zinger Burger', price: 209 },
-    { name: 'Paneer Burger', price: 199 }
+    { name: 'Cheeseburger', price: 189, img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600' }
   ],
   sandwich: [
-    { name: 'Grilled Club Sandwich', price: 169 },
-    { name: 'Veg Cheese Toast', price: 129 },
-    { name: 'Corn & Cheese Sandwich', price: 139 },
-    { name: 'Chicken Club Sandwich', price: 199 }
+    { name: 'Paneer Tikka Sandwich', price: 159, img: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=600' }
   ],
   pasta: [
-    { name: 'Smoked Alfredo Penne', price: 289 },
-    { name: 'Arrabbiata Penne', price: 269 },
-    { name: 'Creamy Pesto Pasta', price: 299 },
-    { name: 'Mac & Cheese', price: 249 }
+    { name: 'Smoked Alfredo Penne', price: 289, img: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=600' }
   ],
   momos: [
-    { name: 'Steamed Veg Momos', price: 119 },
-    { name: 'Fried Chicken Momos', price: 149 },
-    { name: 'Pan Fried Schezwan Momos', price: 159 },
-    { name: 'Tandoori Momos', price: 169 }
+    { name: 'Steamed Veg Momos', price: 119, img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=600' }
   ],
   rolls: [
-    { name: 'Double Egg Roll', price: 99 },
-    { name: 'Paneer Tikka Roll', price: 129 },
-    { name: 'Chicken Kebab Roll', price: 139 },
-    { name: 'Mixed Veg Roll', price: 119 }
+    { name: 'Chicken Roll', price: 139, img: 'https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?q=80&w=600' }
+  ],
+  fried_rice: [
+    { name: 'Egg Fried Rice', price: 199, img: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=600' }
+  ],
+  noodles: [
+    { name: 'Chilli Garlic Hakka Noodles', price: 229, img: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=600' }
   ],
   snacks: [
-    { name: 'Onion Rings', price: 129 },
-    { name: 'Garlic Bread with Cheese', price: 149 },
-    { name: 'Nachos with Cheese Sauce', price: 159 },
-    { name: 'Chicken Nuggets', price: 179 }
+    { name: 'Omelette Platter', price: 135, img: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=600' },
+    { name: 'Bun Maska', price: 85, img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600' }
   ],
   coffee: [
-    { name: 'Filter Kaapi', price: 99 },
-    { name: 'Cappuccino', price: 129 },
-    { name: 'Cafe Latte', price: 139 },
-    { name: 'Americano', price: 109 }
+    { name: 'Filter Kaapi', price: 99, img: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600' }
   ],
   tea: [
-    { name: 'Masala Chai', price: 79 },
-    { name: 'Elaichi Tea', price: 69 },
-    { name: 'Green Tea', price: 89 },
-    { name: 'Ginger Lemon Tea', price: 79 }
+    { name: 'Masala Tea', price: 79, img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600' }
   ],
   mocktails: [
-    { name: 'Virgin Mojito', price: 149 },
-    { name: 'Blue Lagoon', price: 149 },
-    { name: 'Fruit Punch', price: 169 },
-    { name: 'Watermelon Cooler', price: 139 }
+    { name: 'Black Currant Mojito', price: 159, img: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=600' }
   ],
-  cold_beverages: [
-    { name: 'Cassette Cola Float', price: 129 },
-    { name: 'Iced Americano', price: 119 },
-    { name: 'Cold Coffee with Ice Cream', price: 159 },
-    { name: 'Fresh Lime Soda', price: 99 }
+  soft_drinks: [
+    { name: 'Fresh Lime Soda', price: 99, img: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600' }
+  ],
+  shakes: [
+    { name: 'Strawberry Shake', price: 149, img: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=600' }
   ],
   desserts: [
-    { name: 'Cassette Tape Lava Cake', price: 199 },
-    { name: 'Brownie with Ice Cream', price: 179 },
-    { name: 'Warm Gulab Jamun (2 Pcs)', price: 89 },
-    { name: 'Sizzling Brownie Plate', price: 219 }
+    { name: 'Hot Gulab Jamun', price: 89, img: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=600' },
+    { name: 'Brownie with Ice Cream', price: 179, img: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=600' }
   ],
   ice_cream: [
-    { name: 'Vanilla Bean', price: 79 },
-    { name: 'Chocolate Fudge', price: 89 },
-    { name: 'Butterscotch', price: 89 },
-    { name: 'Strawberry Ripple', price: 79 }
+    { name: 'Vanilla Bean Scoop', price: 79, img: 'https://images.unsplash.com/photo-1560180474-e8563fd75bab?q=80&w=600' }
+  ],
+  combos: [
+    { name: 'Hakka Noodles + Chilli Paneer Combo', price: 265, img: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=600' },
+    { name: 'Fried Rice + Chilli Chicken Combo', price: 285, img: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=600' }
+  ],
+  special_dishes: [
+    { name: 'Basanti Pulao + Mutton Kasha Special', price: 365, img: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600' }
   ]
 };
 
@@ -141,13 +102,18 @@ const CATEGORIES = [
   { id: 'pasta', label: 'Pasta' },
   { id: 'momos', label: 'Momos' },
   { id: 'rolls', label: 'Rolls' },
+  { id: 'fried_rice', label: 'Fried Rice' },
+  { id: 'noodles', label: 'Noodles' },
   { id: 'snacks', label: 'Snacks' },
   { id: 'coffee', label: 'Coffee' },
   { id: 'tea', label: 'Tea' },
   { id: 'mocktails', label: 'Mocktails' },
-  { id: 'cold_beverages', label: 'Cold Beverages' },
+  { id: 'soft_drinks', label: 'Soft Drinks' },
+  { id: 'shakes', label: 'Shakes' },
   { id: 'desserts', label: 'Desserts' },
-  { id: 'ice_cream', label: 'Ice Cream' }
+  { id: 'ice_cream', label: 'Ice Cream' },
+  { id: 'combos', label: 'Combos' },
+  { id: 'special_dishes', label: 'Special Dishes' }
 ];
 
 export default function RestroMenu() {
@@ -174,6 +140,8 @@ export default function RestroMenu() {
     setActiveCategory(id);
   };
 
+  const activeCategoryLabel = CATEGORIES.find(c => c.id === activeCategory)?.label || '';
+
   return (
     <div className="menu-section-container">
       {/* Category Tabs */}
@@ -189,18 +157,25 @@ export default function RestroMenu() {
         ))}
       </div>
 
-      {/* Elegant Menu Layout */}
-      <div className="menu-display-layout">
+      {/* Elegant Restaurant Grid Menu Layout */}
+      <div className="menu-grid-layout">
         <div className="menu-category-header">
-          <h3>{CATEGORIES.find(c => c.id === activeCategory)?.label}</h3>
+          <h3>{activeCategoryLabel}</h3>
         </div>
 
-        <div className="menu-items-table">
+        <div className="menu-cards-grid">
           {MENU_DATA[activeCategory].map((item, idx) => (
-            <div key={idx} className="menu-table-row">
-              <span className="menu-dish-name">{item.name}</span>
-              <span className="menu-dish-dots"></span>
-              <span className="menu-dish-price">₹{item.price}</span>
+            <div key={idx} className="menu-item-card">
+              <div className="menu-item-card-img-box">
+                <img src={item.img} alt={item.name} className="menu-item-card-img" />
+                <span className="menu-item-card-category">{activeCategoryLabel}</span>
+              </div>
+              <div className="menu-item-card-body">
+                <h4 className="menu-item-card-title">{item.name}</h4>
+                <div className="menu-item-card-footer">
+                  <span className="menu-item-card-price">₹{item.price}</span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
