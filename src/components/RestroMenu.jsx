@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const MENU_DATA = {
   starters: [
     { name: 'Paneer Tikka Dry', price: 239, img: '/images/menu/paneer-tikka.jpg' },
-    { name: 'Chicken Roast', price: 279, img: '/images/menu/chicken-roast.jpg' },
+    { name: 'Drums of China Town', price: 269, img: '/images/menu/drums-china-town.jpg' },
     { name: 'Fish & Chips', price: 295, img: '/images/menu/fish-chips.jpg' },
     { name: 'Cheese Corn Balls', price: 199, img: '/images/menu/cheese-corn-balls.jpg' },
     { name: 'Peri Peri Fries Basket', price: 149, img: '/images/menu/peri-peri-fries.jpg' }
@@ -34,7 +34,7 @@ const MENU_DATA = {
     { name: 'Double Cheese Pizza', price: 349, img: '/images/menu/double-cheese-pizza.jpg' }
   ],
   burger: [
-    { name: 'Cheeseburger', price: 189, img: '/images/menu/cheeseburger.jpg' }
+    { name: 'Chicken BBQ Burger', price: 189, img: '/images/menu/bbq-burger.jpg' }
   ],
   sandwich: [
     { name: 'Paneer Tikka Sandwich', price: 159, img: '/images/menu/paneer-sandwich.jpg' }
@@ -65,13 +65,13 @@ const MENU_DATA = {
     { name: 'Masala Tea', price: 79, img: '/images/menu/masala-tea.jpg' }
   ],
   mocktails: [
-    { name: 'Black Currant Mojito', price: 159, img: '/images/menu/black-currant-mojito.jpg' }
+    { name: 'Blue Lagoon Mojito', price: 159, img: '/images/menu/blue-lagoon.jpg' }
   ],
   soft_drinks: [
     { name: 'Fresh Lime Soda', price: 99, img: '/images/menu/fresh-lime-soda.jpg' }
   ],
   shakes: [
-    { name: 'Strawberry Shake', price: 149, img: '/images/menu/strawberry-shake.jpg' }
+    { name: 'KitKat Shake', price: 149, img: '/images/menu/kitkat-shake.jpg' }
   ],
   desserts: [
     { name: 'Hot Gulab Jamun', price: 89, img: '/images/menu/gulab-jamun.jpg' },
