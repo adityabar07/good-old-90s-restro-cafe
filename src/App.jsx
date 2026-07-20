@@ -296,7 +296,7 @@ function App() {
                 <div className="contact-icon-box"><i className="fa-solid fa-location-dot"></i></div>
                 <div className="contact-card-content">
                   <h4>Address</h4>
-                  <p>7, Head Post office, 2, Jessore Rd, beside Barasat, Shibananda Pally, Sethpukur, Barasat, Kolkata, West Bengal 700124</p>
+                  <p>7/2, Jessore Road, Sethpukur, Barasat, Kolkata, West Bengal - 700124</p>
                 </div>
               </div>
 
@@ -341,22 +341,18 @@ function App() {
               </div>
             </div>
 
-            {/* Google Maps placeholder */}
-            <div className="map-placeholder-card">
-              <div className="map-placeholder-icon"><i className="fa-solid fa-map-location-dot"></i></div>
-              <h3 className="map-placeholder-title">Google Maps Placement</h3>
-              <p className="map-placeholder-desc">
-                7, Jessore Rd, beside Barasat Shibananda Pally, Kolkata, West Bengal 700124
-              </p>
-              <a 
-                href="https://maps.google.com/?q=Good+Old+90s+Restro+Cafe+Barasat" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-primary"
-                onClick={playClickSound}
-              >
-                View on Google Maps
-              </a>
+            {/* Google Maps Embed iframe */}
+            <div className="map-embed-container" style={{ width: '100%', minHeight: '320px' }}>
+              <iframe
+                title="Good Old 90s Restro Cafe Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.124564878232!2d88.4829604!3d22.71476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8a3ac77616ca5%3A0xad1a8ffa086b9db1!2sGood%20Old%2090s%20Restro%20Cafe!5e0!3m2!1sen!2sin!4v1721495474000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: '1px solid var(--line)', borderRadius: 'var(--radius-lg)', minHeight: '320px', background: 'var(--espresso)' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -392,7 +388,7 @@ function App() {
             <div className="footer-col">
               <h5>Contact Info</h5>
               <ul style={{ color: 'rgba(244, 233, 212, 0.65)', fontSize: '0.88rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <li>7, Jessore Rd, Kolkata, WB</li>
+                <li>7/2, Jessore Road, Barasat, Kolkata - 700124</li>
                 <li>+91 90384 74339</li>
                 <li>hello@goodold90scafe.com</li>
               </ul>
