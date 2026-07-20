@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import RetroPlayer from './components/RetroPlayer';
 import RestroMenu from './components/RestroMenu';
 
 const GALLERY_IMAGES = [
@@ -222,7 +221,7 @@ function App() {
       </section>
 
       {/* ==========================================
-           MENU & PLAYER SECTION
+           MENU SECTION
          ========================================== */}
       <section className="section menu-section" id="menu">
         <div className="container">
@@ -234,24 +233,8 @@ function App() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '40px' }}>
-            {/* Main Menu tabs */}
-            <div>
-              <RestroMenu />
-            </div>
-
-            {/* Vintage Player (Walkman) integrated below the menu */}
-            <div style={{ maxWidth: '420px', margin: '0 auto', width: '100%' }}>
-              <div style={{ textAlign: 'center', marginBottom: '15px' }}>
-                <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--cream-soft)', fontSize: '1.15rem' }}>
-                  Tune into the 90s
-                </h4>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(244, 233, 212, 0.6)', marginTop: '2px' }}>
-                  Listen to frothed chiptunes while checking out our dishes.
-                </p>
-              </div>
-              <RetroPlayer />
-            </div>
+          <div>
+            <RestroMenu />
           </div>
         </div>
       </section>
@@ -310,7 +293,7 @@ function App() {
           <div className="contact-layout">
             <div className="contact-details-grid">
               <div className="contact-card">
-                <div className="contact-icon-box">📍</div>
+                <div className="contact-icon-box"><i className="fa-solid fa-location-dot"></i></div>
                 <div className="contact-card-content">
                   <h4>Address</h4>
                   <p>7, Head Post office, 2, Jessore Rd, beside Barasat, Shibananda Pally, Sethpukur, Barasat, Kolkata, West Bengal 700124</p>
@@ -318,7 +301,7 @@ function App() {
               </div>
 
               <div className="contact-card">
-                <div className="contact-icon-box">📞</div>
+                <div className="contact-icon-box"><i className="fa-solid fa-phone"></i></div>
                 <div className="contact-card-content">
                   <h4>Phone Number</h4>
                   <p>+91 90384 74339</p>
@@ -326,7 +309,7 @@ function App() {
               </div>
 
               <div className="contact-card">
-                <div className="contact-icon-box">💬</div>
+                <div className="contact-icon-box"><i className="fa-brands fa-whatsapp"></i></div>
                 <div className="contact-card-content">
                   <h4>WhatsApp Number</h4>
                   <p>+91 90384 74339</p>
@@ -334,7 +317,7 @@ function App() {
               </div>
 
               <div className="contact-card">
-                <div className="contact-icon-box">✉️</div>
+                <div className="contact-icon-box"><i className="fa-solid fa-envelope"></i></div>
                 <div className="contact-card-content">
                   <h4>Email Address</h4>
                   <p>hello@goodold90scafe.com</p>
@@ -342,7 +325,7 @@ function App() {
               </div>
 
               <div className="contact-card">
-                <div className="contact-icon-box">🕒</div>
+                <div className="contact-icon-box"><i className="fa-solid fa-clock"></i></div>
                 <div className="contact-card-content">
                   <h4>Opening Hours</h4>
                   <p>Mon – Sun: 11:00 AM – 10:00 PM</p>
@@ -352,15 +335,15 @@ function App() {
               <div className="contact-card" style={{ flexDirection: 'column', gap: '10px' }}>
                 <h4 style={{ fontSize: '0.95rem', color: 'var(--cream-soft)', fontWeight: '600' }}>Social Media Connect</h4>
                 <div className="contact-social-row">
-                  <a href="#facebook" className="contact-social-link" onClick={(e) => { e.preventDefault(); playClickSound(); }} aria-label="Facebook">FB</a>
-                  <a href="#instagram" className="contact-social-link" onClick={(e) => { e.preventDefault(); playClickSound(); }} aria-label="Instagram">IG</a>
+                  <a href="#facebook" className="contact-social-link" onClick={(e) => { e.preventDefault(); playClickSound(); }} aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+                  <a href="#instagram" className="contact-social-link" onClick={(e) => { e.preventDefault(); playClickSound(); }} aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
             </div>
 
             {/* Google Maps placeholder */}
             <div className="map-placeholder-card">
-              <div className="map-placeholder-icon">🗺️</div>
+              <div className="map-placeholder-icon"><i className="fa-solid fa-map-location-dot"></i></div>
               <h3 className="map-placeholder-title">Google Maps Placement</h3>
               <p className="map-placeholder-desc">
                 7, Jessore Rd, beside Barasat Shibananda Pally, Kolkata, West Bengal 700124
@@ -422,8 +405,8 @@ function App() {
                 <span>11 AM – 10 PM</span>
               </div>
               <div className="contact-social-row" style={{ marginTop: '15px' }}>
-                <a href="#facebook" className="contact-social-link" onClick={(e) => { e.preventDefault(); playClickSound(); }}>FB</a>
-                <a href="#instagram" className="contact-social-link" onClick={(e) => { e.preventDefault(); playClickSound(); }}>IG</a>
+                <a href="#facebook" className="contact-social-link" onClick={(e) => { e.preventDefault(); playClickSound(); }}><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="#instagram" className="contact-social-link" onClick={(e) => { e.preventDefault(); playClickSound(); }}><i className="fa-brands fa-instagram"></i></a>
               </div>
             </div>
           </div>
