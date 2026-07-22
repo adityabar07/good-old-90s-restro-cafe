@@ -150,12 +150,16 @@ function App() {
          ========================================== */}
       <section className="section" id="about">
         <div className="container about-grid">
-          {/* Main frame representing diner warmth */}
+          {/* Main frame with authentic cafe photograph */}
           <div className="about-media">
             <div className="about-badge">EST. 1998<br/>SINCE THE 90s</div>
             <div className="frame-main ambient-light-glow">
-              <div className="frame-main-content">
-                <div className="frame-main-icon">☕</div>
+              <img 
+                src="/images/about-real-cafe.jpg" 
+                alt="Good Old 90s Restro Cafe Entrance" 
+                className="about-real-img"
+              />
+              <div className="frame-main-overlay">
                 <h3 className="frame-main-title">A Taste of the Past</h3>
                 <p className="frame-main-desc">
                   Step inside our cozy dining corner filled with warm wood accents, frothed coffee, and retro tracks.

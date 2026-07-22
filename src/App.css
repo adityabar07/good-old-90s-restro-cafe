@@ -451,34 +451,45 @@
   box-shadow: 0 30px 60px -20px rgba(0,0,0,.6);
   border: 1px solid var(--line);
   background-color: var(--espresso);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 380px;
+  position: relative;
+  height: 400px;
 }
 
-.frame-main-content {
-  padding: 40px;
+.about-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+
+.frame-main:hover .about-real-img {
+  transform: scale(1.04);
+}
+
+.frame-main-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 35px 25px 22px 25px;
+  background: linear-gradient(to top, rgba(17, 12, 8, 0.95) 0%, rgba(17, 12, 8, 0.75) 60%, transparent 100%);
   text-align: center;
-}
-
-.frame-main-icon {
-  font-size: 3.5rem;
-  color: var(--orange-light);
-  margin-bottom: 20px;
 }
 
 .frame-main-title {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: var(--cream-soft);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 .frame-main-desc {
-  font-size: 1rem;
-  color: rgba(244, 233, 212, .7);
-  line-height: 1.5;
+  font-size: 0.92rem;
+  color: rgba(244, 233, 212, .85);
+  line-height: 1.45;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .about-badge {
